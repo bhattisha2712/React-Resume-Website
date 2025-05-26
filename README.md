@@ -3,12 +3,12 @@
 A modern, interactive resume/portfolio website built with React and Vite, featuring a responsive design and dark/light mode toggle.
 
 ![React Resume Screenshot](src/assets/ss1.png)
-(src/assets/ss2.png)
-(src/assets/ss3.png)
-(src/assets/ss4.png)
-(src/assets/ss5.png)
-(src/assets/ss6.png)
-(src/assets/ss7.png)
+![React Resume Screenshot](src/assets/ss2.png)
+![React Resume Screenshot](src/assets/ss3.png)
+![React Resume Screenshot](src/assets/ss4.png)
+![React Resume Screenshot](src/assets/ss5.png)
+![React Resume Screenshot](src/assets/ss6.png)
+![React Resume Screenshot](src/assets/ss7.png)
 
 ## 🌟 Features
 
