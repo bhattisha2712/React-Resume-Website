@@ -1,0 +1,494 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  /* Custom Resume Colors - Light Theme */
+  --color-primary-50: #f3f6fb;
+  --color-primary-100: #e3eaf6;
+  --color-primary-200: #c8d7ee;
+  --color-primary-300: #a4bfe3;
+  --color-primary-400: #7ea6d6;
+  --color-primary-500: #5b8acb;
+  --color-primary-600: #4171b3;
+  --color-primary-700: #335a8e;
+  --color-primary-800: #29476c;
+  --color-primary-900: #22395a;
+  
+  /* Navigation/Footer Colors - Light Theme (Updated for stronger contrast) */
+  --color-nav-50: #eaf0fb;
+  --color-nav-100: #d2e0fa;
+  --color-nav-200: #b3cdf7;
+  --color-nav-300: #8db3f4;
+  --color-nav-400: #5b8acb;
+  --color-nav-500: #4171b3;
+  --color-nav-600: #335a8e;
+  --color-nav-700: #29476c;
+  --color-nav-800: #22395a;
+  --color-nav-900: #1a2c44;
+  
+  /* Custom Accent Colors */
+  --color-accent-50: #f5f3ff;
+  --color-accent-100: #ede9fe;
+  --color-accent-200: #ddd6fe;
+  --color-accent-300: #c4b5fd;
+  --color-accent-400: #a78bfa;
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+  --color-accent-700: #6d28d9;
+  --color-accent-800: #5b21b6;
+  --color-accent-900: #4c1d95;
+  
+  /* Enhanced Grays */
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  
+  /* Success/Green */
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+}
+
+/* Force dark mode styles when .dark class is present */
+:root.dark,
+.dark {
+  color-scheme: dark;
+}
+
+/* Hover Effects Only - Animations Removed */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+}
+
+/* Custom Gradient Backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #5b8acb, #8b5cf6);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #e3eaf6, #f5f3ff);
+}
+
+.bg-gradient-nav {
+  background: linear-gradient(135deg, var(--color-nav-700), var(--color-nav-900));
+}
+
+/* Navigation/Footer Colors - Dark Theme (Modern, vibrant, and accessible) */
+:root.dark {
+  --color-nav-dark-1: #232b3a;
+  --color-nav-dark-2: #1e293b;
+  --color-nav-dark-3: #3b82f6;
+  --color-footer-dark-1: #232b3a;
+  --color-footer-dark-2: #8b5cf6;
+}
+
+.bg-gradient-nav-dark {
+  background: linear-gradient(90deg, var(--color-nav-dark-1) 0%, var(--color-nav-dark-2) 60%, var(--color-nav-dark-3) 100%);
+}
+.bg-gradient-footer-dark {
+  background: linear-gradient(90deg, var(--color-footer-dark-1) 0%, var(--color-footer-dark-2) 100%);
+}
+
+.text-nav-dark {
+  color: #f3f4f6 !important;
+}
+.text-footer-dark {
+  color: #f3f4f6 !important;
+}
+
+/* Contact/Education dark backgrounds and card tweaks */
+.dark .contact-card, .dark .education-card {
+  background: linear-gradient(135deg, #232b3a 60%, #1e293b 100%);
+  border: 1.5px solid #3b82f6;
+  color: #f3f4f6;
+}
+.dark .contact-label, .dark .education-label {
+  color: #a5b4fc;
+}
+.dark .contact-value, .dark .education-value {
+  color: #60a5fa;
+}
+
+/* Enhanced Light/Dark Mode Styles with strong contrast */
+:root.dark .dark\:bg-gray-900,
+.dark .dark\:bg-gray-900 {
+  background-color: #121212 !important; /* Darker than default */
+}
+
+:root.dark .dark\:bg-gray-800,
+.dark .dark\:bg-gray-800 {
+  background-color: #1f1f1f !important; /* Darker than default */
+}
+
+:root.dark .dark\:bg-primary-800,
+.dark .dark\:bg-primary-800 {
+  background-color: #075985 !important;
+}
+
+:root.dark .dark\:bg-primary-900,
+.dark .dark\:bg-primary-900 {
+  background-color: #0c4a6e !important;
+}
+
+:root.dark .dark\:bg-nav-800,
+.dark .dark\:bg-nav-800 {
+  background-color: #064e3b !important; /* Deep green */
+}
+
+:root.dark .dark\:text-gray-300,
+.dark .dark\:text-gray-300 {
+  color: #e2e2e2 !important; /* Brighter than default */
+}
+
+:root.dark .dark\:text-gray-400,
+.dark .dark\:text-gray-400 {
+  color: #cccccc !important; /* Brighter than default */
+}
+
+:root.dark .dark\:text-primary-300,
+.dark .dark\:text-primary-300 {
+  color: #7dd3fc !important; /* Light blue */
+}
+
+:root.dark .dark\:text-nav-300,
+.dark .dark\:text-nav-300 {
+  color: #6ee7b7 !important; /* Light green */
+}
+
+/* Slide In Down Animation */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Fade In Up Slow Animation */
+@keyframes fadeInUp-slow {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp-slow {
+  animation: fadeInUp-slow 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Navigation Background Colors - Light Mode */
+.bg-nav-600 {
+  background-color: #5bbfa7; /* Vibrant teal for nav in light mode */
+}
+.bg-nav-900 {
+  background-color: #179e7a; /* Deep teal for nav in light mode */
+}
+
+/* Navigation Text Colors - Light Mode (Override for white font) */
+.text-nav-300,
+.text-nav-400,
+.text-nav-500,
+.text-nav-600,
+.text-nav-700,
+.text-nav-800,
+.text-nav-900 {
+  color: #fff !important;
+}
+
+/* Footer Background and Text - Light Mode */
+.bg-footer-light {
+  background: linear-gradient(90deg, #ede9fe 0%, #e3eaf6 100%); /* Soft purple/blue gradient */
+}
+.text-footer-light {
+  color: #fff !important;
+}
+
+/* Footer border for light mode */
+.footer-border-light {
+  border-top: 2px solid var(--color-nav-200);
+}
+
+/* ANIMATIONS */
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Slide In Left Animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Slide In Right Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Slide In Down Animation */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Slide In Up Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade In Up Slow Animation */
+@keyframes fadeInUp-slow {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp-slow {
+  animation: fadeInUp-slow 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate 8s linear infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+/* Animation Delays */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Dark mode text enhancements */
+.dark .text-gray-200 {
+  color: #e5e7eb !important;
+}
+.dark .text-gray-100 {
+  color: #f3f4f6 !important;
+}
+
+.bg-white {
+  background-color: #f3f6fb !important;
+}
+.bg-gray-100 {
+  background-color: #f1f5f9 !important;
+}
+.bg-gray-50 {
+  background-color: #f8fafc !important;
+}
+.text-gray-900 {
+  color: #22395a !important;
+}
+.text-gray-800 {
+  color: #29476c !important;
+}
+.text-gray-700 {
+  color: #335a8e !important;
+}
+
+/* Component Borders and Shadows for Light Theme */
+.component-section {
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+}
+.component-card {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 12px 0 rgba(60, 72, 88, 0.07);
+}
+
+/* For dark mode, keep backgrounds and borders subtle */
+:root.dark .component-section {
+  background-color: #1e293b;
+  border: 1.5px solid #334155;
+}
+:root.dark .component-card {
+  background-color: #1f2937;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 12px 0 rgba(30, 41, 59, 0.18);
+}
